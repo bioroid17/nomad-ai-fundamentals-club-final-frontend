@@ -1,0 +1,216 @@
+.timer-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timer-page h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+
+/* 타이머 디스플레이 */
+.timer-display {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.timer-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.timer-inner {
+  width: 280px;
+  height: 280px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.timer-time {
+  font-size: 72px;
+  font-weight: bold;
+  color: var(--text-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-label {
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 컨트롤 버튼 */
+.timer-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.timer-controls .btn {
+  min-width: 120px;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+/* 과목 선택 */
+.subjects-section {
+  background: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.subjects-section h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.subjects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.subject-item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.subject-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: white;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.subject-btn:hover:not(:disabled) {
+  border-color: var(--primary-color);
+  background-color: #f0f8ff;
+}
+
+.subject-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.delete-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 2px solid var(--danger-color);
+  border-radius: var(--border-radius);
+  background: white;
+  color: var(--danger-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* 새 과목 추가 */
+.add-subject {
+  display: flex;
+  gap: 10px;
+}
+
+.add-subject input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+}
+
+.add-subject input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.add-subject .btn {
+  padding: 12px 24px;
+}
+
+/* 완료된 세션 */
+.completed-sessions {
+  background: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.completed-sessions h3 {
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.completed-sessions p {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  .timer-circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .timer-inner {
+    width: 220px;
+    height: 220px;
+  }
+
+  .timer-time {
+    font-size: 48px;
+  }
+
+  .subjects-list {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .timer-controls {
+    gap: 10px;
+  }
+
+  .timer-controls .btn {
+    min-width: 100px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
