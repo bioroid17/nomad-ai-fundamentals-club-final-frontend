@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/nomad-ai-fundamentals-club-final-frontend">
       <div className="app">
         <nav className="navbar">
           <div className="nav-container">
